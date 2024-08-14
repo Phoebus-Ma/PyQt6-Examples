@@ -7,15 +7,45 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QPixmap
 
 
+# Slot.
 def updateLabel(label: QLabel):
 # {
-    label.setText('Niubility !')
+    # English: hello.
+    # Chinese: nihao.
+    label.setText('nihao world.')
+# }
+
+
+def changeText(label: QLabel):
+# {
+    # Change label context.
+    QTimer.singleShot(3000, lambda: updateLabel(label))
+# }
+
+
+def showImage() -> QLabel:
+# {
+    imgLabel = QLabel()
+    imgLabel.setPixmap(QPixmap('test.jpg'))
+
+    return imgLabel
+# }
+
+
+def showText() -> QLabel:
+# {
+    textLabel = QLabel()
+    textLabel.setText('hello world.')
+
+    return textLabel
 # }
 
 
 # QWidget API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QWidget.html>
+# QVBoxLayout : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
 # QLabel  API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLabel.html>
 # QTimer  API : <https://doc.qt.io/qtforpython-6/PySide6/QtCore/QTimer.html>
 def main():
@@ -23,23 +53,14 @@ def main():
     app = QApplication([])
 
     # Controls.
-    # English: hello.
-    # Chinese: nihao.
-    label1 = QLabel()
-    label1.setText('hello world.')
-
-    label2 = QLabel()
-    label2.setText('nihao world.')
-
-    label3 = QLabel()
-    label3.setText('Great !')
+    label1 = showText()
+    label2 = showImage()
 
     # Layout.
     layout = QVBoxLayout()
 
     layout.addWidget(label1)
     layout.addWidget(label2)
-    layout.addWidget(label3)
     layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     # Widget.
@@ -49,8 +70,8 @@ def main():
     widget.resize(300, 200)
     widget.show()
 
-    # Change label context.
-    QTimer.singleShot(3000, lambda: updateLabel(label3))
+    # Timer.
+    changeText(label1)
 
     sys.exit(app.exec())
 # }
