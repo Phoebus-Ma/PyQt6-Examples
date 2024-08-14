@@ -44,6 +44,7 @@ def showText() -> QLabel:
 # }
 
 
+# QApplication: <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QApplication.html>
 # QWidget API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QWidget.html>
 # QVBoxLayout : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
 # QLabel  API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLabel.html>

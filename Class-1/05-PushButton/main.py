@@ -9,7 +9,16 @@ from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMe
 from PyQt6.QtCore import Qt
 
 
-def buttonClick(widget: QWidget):
+def toggleClicked(button: QPushButton):
+# {
+    if button.isChecked():
+        button.setText('ON')
+    else:
+        button.setText('OFF')
+# }
+
+
+def buttonClicked(widget: QWidget):
 # {
     print('---- Button clicked. ----')
 
@@ -21,6 +30,29 @@ def buttonClick(widget: QWidget):
 # }
 
 
+def createToggleButton() -> QPushButton:
+# {
+    button = QPushButton()
+
+    button.setText('OFF')
+    button.setFixedSize(100, 30)
+    button.setCheckable(True)
+    button.setStyleSheet('background-color: red')
+
+    return button
+# }
+
+
+def createPushButton() -> QPushButton:
+# {
+    button = QPushButton()
+
+    button.setText('OK')
+    button.setFixedSize(100, 30)
+
+    return button
+# }
+
 # QPushButton API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QPushButton.html>
 # QMessageBox API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QMessageBox.html>
 def main():
@@ -29,16 +61,17 @@ def main():
     widget = QWidget()
 
     # Controls.
-    button = QPushButton()
+    btnMessage = createPushButton()
+    btnMessage.clicked.connect(lambda: buttonClicked(widget))
 
-    button.setText('OK')
-    button.setFixedSize(100, 30)
-    button.clicked.connect(lambda: buttonClick(widget))
+    btnToggle = createToggleButton()
+    btnToggle.clicked.connect(lambda: toggleClicked(btnToggle))
 
     # Layout.
     layout = QVBoxLayout()
 
-    layout.addWidget(button)
+    layout.addWidget(btnMessage)
+    layout.addWidget(btnToggle)
     layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     # Widget.
