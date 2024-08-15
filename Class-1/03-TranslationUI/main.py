@@ -22,6 +22,10 @@ def main():
 
     print(ui.label.text())
 
+    ui.label.setText('Nihao World.')
+
+    print(ui.label.text())
+
     app.exec()
 # }
 
