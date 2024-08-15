@@ -14,7 +14,9 @@ class MainWindow(QWidget):
     # {
         super().__init__()
 
-        self.title = 'Grid Layout'
+        self.title     = 'Grid Layout'
+        self.winWidth  = 300
+        self.winHeight = 200
 
         self.initUI()
     # }
@@ -22,7 +24,7 @@ class MainWindow(QWidget):
     def initUI(self):
     # {
         self.setWindowTitle(self.title)
-        self.setBaseSize(300, 200)
+        self.setBaseSize(self.winWidth, self.winHeight)
 
         mainlayout = QVBoxLayout()
 
