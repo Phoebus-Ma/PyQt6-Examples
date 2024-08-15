@@ -35,6 +35,18 @@ def showImage() -> QLabel:
 # }
 
 
+def showLink() -> QLabel:
+# {
+    urlLink = '<a href="http://www.bing.com"> Bing </a>'
+
+    linkLabel = QLabel()
+    linkLabel.setText(urlLink)
+    linkLabel.setOpenExternalLinks(True)
+
+    return linkLabel
+# }
+
+
 def showText() -> QLabel:
 # {
     textLabel = QLabel()
@@ -44,7 +56,6 @@ def showText() -> QLabel:
 # }
 
 
-# QApplication: <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QApplication.html>
 # QWidget API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QWidget.html>
 # QVBoxLayout : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
 # QLabel  API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLabel.html>
@@ -55,13 +66,15 @@ def main():
 
     # Controls.
     label1 = showText()
-    label2 = showImage()
+    label2 = showLink()
+    label3 = showImage()
 
     # Layout.
     layout = QVBoxLayout()
 
     layout.addWidget(label1)
     layout.addWidget(label2)
+    layout.addWidget(label3)
     layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     # Widget.
