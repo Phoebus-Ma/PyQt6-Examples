@@ -5,8 +5,8 @@
 ###
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt6.QtGui import QPixmap
 
 
@@ -19,14 +19,14 @@ def updateLabel(label: QLabel):
 # }
 
 
-def changeText(label: QLabel):
+def createUpdateTimer(label: QLabel):
 # {
     # Change label context.
     QTimer.singleShot(3000, lambda: updateLabel(label))
 # }
 
 
-def showImage() -> QLabel:
+def createImageLabel() -> QLabel:
 # {
     imgLabel = QLabel()
     imgLabel.setPixmap(QPixmap('test.jpg'))
@@ -35,7 +35,7 @@ def showImage() -> QLabel:
 # }
 
 
-def showLink() -> QLabel:
+def createLinkLabel() -> QLabel:
 # {
     urlLink = '<a href="http://www.bing.com"> Bing </a>'
 
@@ -47,7 +47,7 @@ def showLink() -> QLabel:
 # }
 
 
-def showText() -> QLabel:
+def createTextLabel() -> QLabel:
 # {
     textLabel = QLabel()
     textLabel.setText('hello world.')
@@ -62,30 +62,28 @@ def showText() -> QLabel:
 # QTimer  API : <https://doc.qt.io/qtforpython-6/PySide6/QtCore/QTimer.html>
 def main():
 # {
-    app = QApplication([])
+    app    = QApplication([])
+    layout = QVBoxLayout()
+    widget = QWidget()
 
     # Controls.
-    label1 = showText()
-    label2 = showLink()
-    label3 = showImage()
+    label1 = createTextLabel()
+    label2 = createLinkLabel()
+    label3 = createImageLabel()
 
     # Layout.
-    layout = QVBoxLayout()
-
     layout.addWidget(label1)
     layout.addWidget(label2)
     layout.addWidget(label3)
     layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     # Widget.
-    widget = QWidget()
-
     widget.setLayout(layout)
     widget.resize(300, 200)
     widget.show()
 
     # Timer.
-    changeText(label1)
+    createUpdateTimer(label1)
 
     sys.exit(app.exec())
 # }

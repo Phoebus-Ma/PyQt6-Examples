@@ -5,8 +5,9 @@
 ###
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox
 from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, \
+    QWidget, QVBoxLayout, QPushButton, QMessageBox
 
 
 def toggleClicked(button: QPushButton):
@@ -57,7 +58,7 @@ def createPushButton() -> QPushButton:
 # QMessageBox API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QMessageBox.html>
 def main():
 # {
-    app = QApplication([])
+    app    = QApplication([])
     widget = QWidget()
 
     # Controls.
