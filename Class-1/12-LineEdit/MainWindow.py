@@ -109,5 +109,8 @@ class MainWindow(QWidget):
 
             case 'PwdEcho':
                 QMessageBox.information(self, 'PwdEcho', str(self.linePwdEcho.text()))
+
+            case _:
+                pass
     # }
 # }
