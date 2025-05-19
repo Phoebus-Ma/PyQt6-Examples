@@ -17,6 +17,7 @@ from PyQt6.QtWidgets import (
 class MainWindow(QMainWindow):
 # {
     def __init__(self):
+    # {
         super().__init__()
 
         self.title     = 'MessageBox'
@@ -24,6 +25,7 @@ class MainWindow(QMainWindow):
         self.winHeight = 200
 
         self.initUI()
+    # }
 
     def initUI(self):
     # {
@@ -35,11 +37,11 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
 
         buttons = [
-            ("Hi-Information", self.show_info),
-            ("Hi-Warning"    , self.show_warning),
-            ("Hi-Critical"   , self.show_critical),
-            ("Hi-Question"   , self.show_question),
-            ("Hi-Custom"     , self.show_custom)
+            ("Hi-Information", self.showInfo),
+            ("Hi-Warning"    , self.showWarning),
+            ("Hi-Critical"   , self.showCritical),
+            ("Hi-Question"   , self.showQuestion),
+            ("Hi-Custom"     , self.showCustom)
         ]
 
         for text, slot in buttons:
@@ -51,14 +53,17 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(widget)
     # }
 
-    def show_info(self):
+    def showInfo(self):
+    # {
         QMessageBox.information(
             self,
             "Information",
             "This is a information tip."
         )
+    # }
 
-    def show_warning(self):
+    def showWarning(self):
+    # {
         reply = QMessageBox.warning(
             self,
             "Warning",
@@ -69,8 +74,10 @@ class MainWindow(QMainWindow):
 
         if reply == QMessageBox.StandardButton.Ok:
             print("User confirmation warning.")
+    # }
 
-    def show_critical(self):
+    def showCritical(self):
+    # {
         QMessageBox.critical(
             self,
             "Critical",
@@ -78,8 +85,10 @@ class MainWindow(QMainWindow):
             buttons=QMessageBox.StandardButton.Ok,
             defaultButton=QMessageBox.StandardButton.Ok
         )
+    # }
 
-    def show_question(self):
+    def showQuestion(self):
+    # {
         reply = QMessageBox.question(
             self,
             "Confirm",
@@ -92,8 +101,10 @@ class MainWindow(QMainWindow):
             print("User select Yes.")
         else:
             print("User select No.")
+    # }
 
-    def show_custom(self):
+    def showCustom(self):
+    # {
         msg = QMessageBox()
         msg.setWindowTitle("Custom MessageBox")
         msg.setText("Main tip")
@@ -102,11 +113,12 @@ class MainWindow(QMainWindow):
         msg.setIcon(QMessageBox.Icon.Warning)
         
         # Add custom button.
-        help_button = msg.addButton("Help", QMessageBox.ButtonRole.HelpRole)
+        btnHelp = msg.addButton("Help", QMessageBox.ButtonRole.HelpRole)
         msg.addButton(QMessageBox.StandardButton.Close)
         
         msg.exec()
         
-        if msg.clickedButton() == help_button:
+        if msg.clickedButton() == btnHelp:
             QMessageBox.information(self, "Help", "This is help information.")
+    # }
 # }
