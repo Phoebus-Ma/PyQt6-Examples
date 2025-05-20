@@ -51,21 +51,21 @@ class MainWindow(QMainWindow):
         self.createDynamicExample(layout)
 
         # Display result label.
-        self.resultLabel = QLabel("Select: None")
+        self.resultLabel = QLabel('Select: None')
         layout.addWidget(self.resultLabel)
     # }
 
     # Create basic radio button group (Use QButtonGroup).
     def createBasicRadioButtons(self, layout):
     # {
-        groupBox = QGroupBox("Color select")
+        groupBox = QGroupBox('Color select')
         vbox = QVBoxLayout()
 
         # Create button group.
         self.colorGroup = QButtonGroup(self)
 
         # Create radio button.
-        colors = ["Red", "Green", "Blue"]
+        colors = ['Red', 'Green', 'Blue']
         self.radioButtons = []
         for i, color in enumerate(colors):
             rb = QRadioButton(color)
@@ -80,13 +80,13 @@ class MainWindow(QMainWindow):
     # Create visual group (Use QGroupBox).
     def createGroupBox(self, layout):
     # {
-        groupBox = QGroupBox("OS Preference")
+        groupBox = QGroupBox('OS Preference')
         hbox = QHBoxLayout()
 
         # Group 1.
         vbox1 = QVBoxLayout()
         osGroup1 = QButtonGroup(self)
-        osList1 = ["Windows", "macOS", "Linux"]
+        osList1 = ['Windows', 'macOS', 'Linux']
         for os in osList1:
             rb = QRadioButton(os)
             vbox1.addWidget(rb)
@@ -96,7 +96,7 @@ class MainWindow(QMainWindow):
         # Group 2.
         vbox2 = QVBoxLayout()
         osGroup2 = QButtonGroup(self)
-        osList2 = ["Android", "iOS"]
+        osList2 = ['Android', 'iOS']
         for os in osList2:
             rb = QRadioButton(os)
             vbox2.addWidget(rb)
@@ -110,18 +110,18 @@ class MainWindow(QMainWindow):
     # Create dynamic update example.
     def createDynamicExample(self, layout):
     # {
-        self.dynamicGroup = QGroupBox("Dynamic Contents")
+        self.dynamicGroup = QGroupBox('Dynamic Contents')
         self.dynamicLayout = QVBoxLayout()
 
         # Trigger selection.
-        self.triggerRadio = QRadioButton("Advanced option")
+        self.triggerRadio = QRadioButton('Advanced option')
         self.triggerRadio.toggled.connect(self.toggleAdvancedOptions)
 
         # Advanced options container.
         self.advancedOptions = QWidget()
         advancedLayout = QVBoxLayout()
-        self.option1 = QRadioButton("Advanced option 1")
-        self.option2 = QRadioButton("Advanced option 2")
+        self.option1 = QRadioButton('Advanced option 1')
+        self.option2 = QRadioButton('Advanced option 2')
         advancedLayout.addWidget(self.option1)
         advancedLayout.addWidget(self.option2)
         self.advancedOptions.setLayout(advancedLayout)
@@ -138,7 +138,7 @@ class MainWindow(QMainWindow):
     # {
         checkedButton = self.colorGroup.checkedButton()
         if checkedButton:
-            self.resultLabel.setText(f"Color: {checkedButton.text()}")
+            self.resultLabel.setText(f'Color: {checkedButton.text()}')
     # }
 
     # Toggle display of advanced options.
