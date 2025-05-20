@@ -19,6 +19,19 @@ $ pip install pyqt6 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
+# Usage
+
+Example dial:
+
+```bash
+$ cd PyQt6-Examples/Class-1/Dial
+$ ls
+main.py  MainWindow.py
+
+$ python main.py
+```
+
+
 # License
 
 MIT License.
