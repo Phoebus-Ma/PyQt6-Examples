@@ -19,7 +19,7 @@ class MainWindow(QWidget):
     # {
         super().__init__()
 
-        self.title     = 'Dial'
+        self.title     = 'FileDialog'
         self.winWidth  = 350
         self.winHeight = 200
 
