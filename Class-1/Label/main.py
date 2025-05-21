@@ -10,7 +10,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt6.QtGui import QPixmap
 
 
-# Slot.
+'''Slot'''
 def updateLabel(label: QLabel):
 # {
     # English: hello.
@@ -56,10 +56,12 @@ def createTextLabel() -> QLabel:
 # }
 
 
-# QWidget API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QWidget.html>
-# QVBoxLayout : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
-# QLabel  API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLabel.html>
-# QTimer  API : <https://doc.qt.io/qtforpython-6/PySide6/QtCore/QTimer.html>
+'''
+QWidget API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QWidget.html>
+QVBoxLayout : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
+QLabel  API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLabel.html>
+QTimer  API : <https://doc.qt.io/qtforpython-6/PySide6/QtCore/QTimer.html>
+'''
 def main():
 # {
     app    = QApplication([])

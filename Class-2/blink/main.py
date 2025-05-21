@@ -36,7 +36,9 @@ def createToggleButton() -> QPushButton:
 # }
 
 
-# QPushButton API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QPushButton.html>
+'''
+QPushButton API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QPushButton.html>
+'''
 def main():
 # {
     app    = QApplication([])

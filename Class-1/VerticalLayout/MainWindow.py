@@ -8,7 +8,9 @@ from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel
 from PyQt6.QtCore import Qt
 
 
-# QVBoxLayout API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
+'''
+QVBoxLayout API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QVBoxLayout.html>
+'''
 class MainWindow(QWidget):
 # {
     def __init__(self):

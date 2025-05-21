@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.resultLabel)
     # }
 
-    # Create basic radio button group (Use QButtonGroup).
+    '''Create basic radio button group (Use QButtonGroup)'''
     def createBasicRadioButtons(self, layout):
     # {
         groupBox = QGroupBox('Color select')
@@ -77,7 +77,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(groupBox)
     # }
 
-    # Create visual group (Use QGroupBox).
+    '''Create visual group (Use QGroupBox)'''
     def createGroupBox(self, layout):
     # {
         groupBox = QGroupBox('OS Preference')
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(groupBox)
     # }
 
-    # Create dynamic update example.
+    '''Create dynamic update example'''
     def createDynamicExample(self, layout):
     # {
         self.dynamicGroup = QGroupBox('Dynamic Contents')
@@ -133,7 +133,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.dynamicGroup)
     # }
 
-    # Update color selection results.
+    '''Update color selection results'''
     def updateColorSelection(self):
     # {
         checkedButton = self.colorGroup.checkedButton()
@@ -141,7 +141,7 @@ class MainWindow(QMainWindow):
             self.resultLabel.setText(f'Color: {checkedButton.text()}')
     # }
 
-    # Toggle display of advanced options.
+    '''Toggle display of advanced options'''
     def toggleAdvancedOptions(self, checked):
     # {
         self.advancedOptions.setVisible(checked)

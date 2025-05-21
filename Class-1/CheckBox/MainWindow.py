@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(btnReset)
     # }
 
-    # Basic checkbox.
+    '''Basic checkbox'''
     def createBasicCheckboxes(self, layout):
     # {
         group = QGroupBox('Base checkbox')
@@ -83,7 +83,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(group)
     # }
 
-    # Tri-state checkbox.
+    '''Tri-state checkbox'''
     def createTristateCheckbox(self, layout):
     # {
         group = QGroupBox('Tri-state checkbox')
@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(group)
     # }
 
-    # Create group checkbox (multi-select).
+    '''Create group checkbox (multi-select)'''
     def createGroupedCheckboxes(self, layout):
     # {
         group = QGroupBox('Multi-select group')
@@ -130,7 +130,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(group)
     # }
 
-    # Dynamic content control.
+    '''Dynamic content control'''
     def createDynamicSection(self, layout):
     # {
         self.dynamicGroup = QGroupBox('Dynamic content control')
@@ -156,7 +156,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.dynamicGroup)
     # }
 
-    # Update selection results.
+    '''Update selection results'''
     def updateSelection(self):
     # {
         selected = []
@@ -198,7 +198,7 @@ class MainWindow(QMainWindow):
         self.resultLabel.setText('Select: ' + ' | '.join(selected) if selected else 'Select: None')
     # }
 
-    # Processing tri-state checkbox.
+    '''Processing tri-state checkbox'''
     def handleTristate(self, state):
     # {
         stateMap = {
@@ -210,7 +210,7 @@ class MainWindow(QMainWindow):
         self.stateLabel.setText(f'Status: {stateMap.get(state, "Unknown")}')
     # }
 
-    # Toggle display of advanced options.
+    '''Toggle display of advanced options'''
     def toggleAdvanced(self, checked):
     # {
         self.advancedWidget.setVisible(checked)
@@ -219,7 +219,7 @@ class MainWindow(QMainWindow):
             self.advancedOption2.setChecked(False)
     # }
 
-    # Reset all selections.
+    '''Reset all selections'''
     def resetAll(self):
     # {
         # Reset basic options.

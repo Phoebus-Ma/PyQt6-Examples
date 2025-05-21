@@ -54,8 +54,10 @@ def createPushButton() -> QPushButton:
     return button
 # }
 
-# QPushButton API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QPushButton.html>
-# QMessageBox API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QMessageBox.html>
+'''
+QPushButton API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QPushButton.html>
+QMessageBox API : <https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QMessageBox.html>
+'''
 def main():
 # {
     app    = QApplication([])

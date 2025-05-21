@@ -91,7 +91,7 @@ class MainWindow(QWidget):
         return formLayout
     # }
 
-    # Common slot.
+    '''Common slot'''
     def btnShowContent(self, btnType: str):
     # {
         match btnType:

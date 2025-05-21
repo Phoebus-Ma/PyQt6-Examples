@@ -59,13 +59,13 @@ class MainWindow(QWidget):
         return vLayout
     # }
 
-    # Real-time update label.
+    '''Real-time update label'''
     def update_label(self, key_sequence):
     # {
         self.label.setText(f'Current shortcuts key: {key_sequence.toString()}')
     # }
 
-    # Display current key squence.
+    '''Display current key squence'''
     def btnGetClicked(self):
     # {
         sequence = self.keySquenceEdit.keySequence()

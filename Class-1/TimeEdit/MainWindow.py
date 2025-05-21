@@ -57,7 +57,7 @@ class MainWindow(QWidget):
         return hLayout
     # }
 
-    # Slot.
+    '''Slot'''
     def btnGetClicked(self):
     # {
         QMessageBox.information(
