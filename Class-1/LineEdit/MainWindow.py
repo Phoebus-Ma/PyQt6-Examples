@@ -26,7 +26,7 @@ class MainWindow(QWidget):
     def initUI(self):
     #{
         self.setWindowTitle(self.title)
-        self.setBaseSize(self.winWidth, self.winHeight)
+        self.setMinimumSize(self.winWidth, self.winHeight)
 
         self.lineNormal  = QLineEdit()
         self.lineNoEcho  = QLineEdit()

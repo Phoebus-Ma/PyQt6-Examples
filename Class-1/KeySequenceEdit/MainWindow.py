@@ -25,7 +25,7 @@ class MainWindow(QWidget):
     def initUI(self):
     # {
         self.setWindowTitle(self.title)
-        self.setBaseSize(self.winWidth, self.winHeight)
+        self.setMinimumSize(self.winWidth, self.winHeight)
 
         self.label = QLabel("Please input ShortKey:")
         self.keySquenceEdit = QKeySequenceEdit()

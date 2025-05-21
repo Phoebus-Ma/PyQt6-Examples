@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
     def initUI(self):
     # {
         self.setWindowTitle(self.title)
-        self.setBaseSize(self.winWidth, self.winHeight)
+        self.setMinimumSize(self.winWidth, self.winHeight)
 
         # Create main layout.
         mainWidget = QWidget()
