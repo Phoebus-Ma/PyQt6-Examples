@@ -6,7 +6,7 @@ PyQt6 plain text edit example.
 
 # Screenshot
 
-![PlainTextEdit](../res/14-PlainTextEdit.png)
+![PlainTextEdit](../../Class-0/res/14-PlainTextEdit.png)
 
 
 # API

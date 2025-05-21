@@ -9,19 +9,19 @@ PyQt6 QLabel UI example.
 Windows 11:
 
 ```bash
-${Python}/Lib/site-packages/qt6_applications/Qt/bin/designer.exe
+$ {Python}/Lib/site-packages/qt6_applications/Qt/bin/designer.exe
 ```
 
 Linux (Ubuntu 22.04):
 
 ```bash
-${Python}/lib/python3.10/site-packages/qt6_applications/Qt/bin/designer
+$ {Python}/lib/python3.10/site-packages/qt6_applications/Qt/bin/designer
 ```
 
 
 # Screenshot
 
-![TranslateUI](../res/03-TranslateUI.png)
+![TranslateUI](../../Class-0/res/03-TranslateUI.png)
 
 
 # Usage

@@ -21,7 +21,7 @@ ${Python}/lib/python3.10/site-packages/qt6_applications/Qt/bin/designer
 
 # Screenshot
 
-![UI](../res/02-UI.png)
+![UI](../../Class-0/res/02-UI.png)
 
 
 # Usage

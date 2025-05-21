@@ -6,7 +6,7 @@ PyQt6 QPushButton example.
 
 # Screenshot
 
-![PushButton](../res/05-PushButton.png)
+![PushButton](../../Class-0/res/05-PushButton.png)
 
 
 # API

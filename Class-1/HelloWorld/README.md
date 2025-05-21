@@ -21,7 +21,7 @@ $ pip install pyqt6 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # Screenshot
 
-![HelloWorld](../res/01-Hello.png)
+![HelloWorld](../../Class-0/res/01-Hello.png)
 
 
 # Usage

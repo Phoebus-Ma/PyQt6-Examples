@@ -6,7 +6,7 @@ PyQt6 date and time example.
 
 # Screenshot
 
-![DateTimeEdit](../res/17-DateTimeEdit.png)
+![DateTimeEdit](../../Class-0/res/17-DateTimeEdit.png)
 
 
 # API

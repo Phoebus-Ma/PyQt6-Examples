@@ -8,7 +8,7 @@ Launch, it will display "hello world.", after 3 seconds, dispaly "nihao world.".
 
 # Screenshot
 
-![Label](../res/04-Label.png)
+![Label](../../Class-0/res/04-Label.png)
 
 
 # API

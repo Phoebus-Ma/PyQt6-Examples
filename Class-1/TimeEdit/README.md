@@ -6,7 +6,7 @@ PyQt6 time edit example.
 
 # Screenshot
 
-![TimeEdit](../res/15-TimeEdit.png)
+![TimeEdit](../../Class-0/res/15-TimeEdit.png)
 
 
 # API

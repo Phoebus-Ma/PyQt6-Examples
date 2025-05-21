@@ -6,7 +6,7 @@ PyQt6 horizontal/vertical spacer example.
 
 # Screenshot
 
-![SpacerItem](../res/11-SpacerItem.png)
+![SpacerItem](../../Class-0/res/11-SpacerItem.png)
 
 
 # API

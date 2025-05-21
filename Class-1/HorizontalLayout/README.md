@@ -6,7 +6,7 @@ PyQt6 QHBoxLayout example.
 
 # Screenshot
 
-![HorizontalLayout](../res/07-HBoxLayout.png)
+![HorizontalLayout](../../Class-0/res/07-HBoxLayout.png)
 
 
 # API

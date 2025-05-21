@@ -6,7 +6,7 @@ PyQt6 QLineEdit example.
 
 # Screenshot
 
-![LineEdit](../res/12-LineEdit.png)
+![LineEdit](../../Class-0/res/12-LineEdit.png)
 
 
 # API

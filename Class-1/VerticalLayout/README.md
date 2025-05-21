@@ -6,7 +6,7 @@ PyQt6 QVBoxLayout example.
 
 # Screenshot
 
-![VBoxLayout](../res/08-VBoxLayout.png)
+![VBoxLayout](../../Class-0/res/08-VBoxLayout.png)
 
 
 # API

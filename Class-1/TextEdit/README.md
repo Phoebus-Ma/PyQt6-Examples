@@ -6,7 +6,7 @@ PyQt6 QTextEdit example.
 
 # Screenshot
 
-![TextEdit](../res/13-TextEdit.png)
+![TextEdit](../../Class-0/res/13-TextEdit.png)
 
 
 # API

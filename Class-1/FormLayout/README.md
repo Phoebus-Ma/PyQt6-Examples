@@ -6,7 +6,7 @@ PyQt6 QFormLayout example.
 
 # Screenshot
 
-![FormLayout](../res/09-FormLayout.png)
+![FormLayout](../../Class-0/res/09-FormLayout.png)
 
 
 # API

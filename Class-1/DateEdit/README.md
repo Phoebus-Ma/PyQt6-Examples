@@ -6,7 +6,7 @@ PyQt6 date edit example.
 
 # Screenshot
 
-![DateEdit](../res/16-DateEdit.png)
+![DateEdit](../../Class-0/res/16-DateEdit.png)
 
 
 # API

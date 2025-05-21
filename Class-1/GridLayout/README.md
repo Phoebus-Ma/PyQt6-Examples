@@ -6,7 +6,7 @@ PyQt6 QGridLayout example.
 
 # Screenshot
 
-![GridLayout](../res/08-GridLayout.png)
+![GridLayout](../../Class-0/res/08-GridLayout.png)
 
 
 # API

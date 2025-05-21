@@ -6,7 +6,7 @@ PyQt6 QStackedLayout example.
 
 # Screenshot
 
-![StackedLayout](../res/10-StackedLayout.png)
+![StackedLayout](../../Class-0/res/10-StackedLayout.png)
 
 
 # API
