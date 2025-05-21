@@ -1,5 +1,5 @@
 ###
-# PyQt6 dial control example.
+# PyQt6 FileDialog control example.
 #
 # License - MIT.
 ###

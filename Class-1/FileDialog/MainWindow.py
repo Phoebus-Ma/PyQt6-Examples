@@ -1,5 +1,5 @@
 ###
-# PyQt6 QDial main window.
+# PyQt6 FileDialog main window.
 #
 # License - MIT.
 ###
