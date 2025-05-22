@@ -16,8 +16,8 @@ class MainWindow(QWidget):
 
         self.title = 'QTextEdit'
         self.file  = 'hello.txt'    # Current path text file.
-        self.winWidth  = 300
-        self.winHeight = 200
+        self.winWidth  = 320
+        self.winHeight = 240
 
         self.initUI()
     # }

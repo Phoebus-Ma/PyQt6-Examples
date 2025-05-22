@@ -81,7 +81,7 @@ def main():
 
     # Widget.
     widget.setLayout(layout)
-    widget.resize(300, 200)
+    widget.resize(320, 240)
     widget.show()
 
     # Timer.

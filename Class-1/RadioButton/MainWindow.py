@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.title     = 'RadioButton'
-        self.winWidth  = 350
+        self.winWidth  = 320
         self.winHeight = 300
 
         self.initUI()

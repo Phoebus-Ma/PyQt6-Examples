@@ -79,7 +79,7 @@ def main():
 
     # Widget.
     widget.setLayout(layout)
-    widget.setFixedSize(300, 200)
+    widget.setFixedSize(320, 240)
     widget.show()
 
     sys.exit(app.exec())

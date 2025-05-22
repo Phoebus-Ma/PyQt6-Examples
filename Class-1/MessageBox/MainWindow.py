@@ -21,8 +21,8 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.title     = 'MessageBox'
-        self.winWidth  = 350
-        self.winHeight = 200
+        self.winWidth  = 320
+        self.winHeight = 240
 
         self.initUI()
     # }
