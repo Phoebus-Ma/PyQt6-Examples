@@ -31,7 +31,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QHBoxLayout()
+        mainlayout = QHBoxLayout()
 
         # Create label for show slider value.
         self.label = QLabel("Value: 0", self)
@@ -46,10 +46,10 @@ class MainWindow(QWidget):
         # Slider connect slot.
         self.scrollBar.valueChanged.connect(self.updateLabel)
 
-        layout.addWidget(self.label)
-        layout.addWidget(self.scrollBar)
+        mainlayout.addWidget(self.label)
+        mainlayout.addWidget(self.scrollBar)
 
-        self.setLayout(layout)
+        self.setLayout(mainlayout)
     # }
 
     def updateLabel(self, value):

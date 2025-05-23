@@ -31,7 +31,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QHBoxLayout()
+        mainlayout = QHBoxLayout()
 
         btn1 = QPushButton('Button 1')
         btn2 = QPushButton('Button 2')
@@ -39,10 +39,10 @@ class MainWindow(QWidget):
         hLine = QFrame()
         hLine.setFrameShape(QFrame.Shape.VLine)
 
-        layout.addWidget(btn1)
-        layout.addWidget(hLine)
-        layout.addWidget(btn2)
+        mainlayout.addWidget(btn1)
+        mainlayout.addWidget(hLine)
+        mainlayout.addWidget(btn2)
 
-        self.setLayout(layout)
+        self.setLayout(mainlayout)
     # }
 # }

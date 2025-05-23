@@ -32,16 +32,16 @@ class MainWindow(QWidget):
         self.setMinimumSize(self.winWidth, self.winHeight)
 
         # Create layout and control.
-        layout = QVBoxLayout()
+        mainlayout = QVBoxLayout()
 
         self.btn = QPushButton('Select', self)
         self.btn.clicked.connect(self.showFileDialog)
 
         self.label = QLabel('Path: ', self)
 
-        layout.addWidget(self.btn)
-        layout.addWidget(self.label)
-        self.setLayout(layout)
+        mainlayout.addWidget(self.btn)
+        mainlayout.addWidget(self.label)
+        self.setLayout(mainlayout)
     # }
 
     def showFileDialog(self):

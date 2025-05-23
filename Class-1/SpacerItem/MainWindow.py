@@ -35,11 +35,11 @@ class MainWindow(QWidget):
         hLayout = self.createHLayout()
         vLayout = self.createVLayout()
 
-        layout = QVBoxLayout()
-        layout.addLayout(hLayout)
-        layout.addLayout(vLayout)
+        mainlayout = QVBoxLayout()
+        mainlayout.addLayout(hLayout)
+        mainlayout.addLayout(vLayout)
 
-        self.setLayout(layout)
+        self.setLayout(mainlayout)
     # }
 
     def createHLayout(self) -> QHBoxLayout:

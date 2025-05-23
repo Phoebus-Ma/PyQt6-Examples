@@ -39,7 +39,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QVBoxLayout()
+        mainlayout = QVBoxLayout()
 
         # Create a QGraphicsView.
         self.graphicsView = QGraphicsView()
@@ -56,8 +56,8 @@ class MainWindow(QWidget):
         # GraphicsView setup scene.
         self.graphicsView.setScene(self.scene)
 
-        layout.addWidget(self.graphicsView)
-        self.setLayout(layout)
+        mainlayout.addWidget(self.graphicsView)
+        self.setLayout(mainlayout)
     # }
 
     def addItemsToScene(self):

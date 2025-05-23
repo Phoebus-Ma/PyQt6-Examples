@@ -30,7 +30,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QVBoxLayout()
+        mainlayout = QVBoxLayout()
 
         # Create a QColumnView.
         self.columnView = QColumnView()
@@ -45,8 +45,8 @@ class MainWindow(QWidget):
         # ColumnView setup model.
         self.columnView.setModel(self.model)
 
-        layout.addWidget(self.columnView)
-        self.setLayout(layout)
+        mainlayout.addWidget(self.columnView)
+        self.setLayout(mainlayout)
     # }
 
     def populateModel(self):

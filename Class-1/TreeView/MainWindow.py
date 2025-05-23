@@ -30,7 +30,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QVBoxLayout()
+        mainlayout = QVBoxLayout()
 
         # Create QTreeView.
         self.treeView = QTreeView()
@@ -45,8 +45,8 @@ class MainWindow(QWidget):
         # TreeView setup model.
         self.treeView.setModel(self.model)
 
-        layout.addWidget(self.treeView)
-        self.setLayout(layout)
+        mainlayout.addWidget(self.treeView)
+        self.setLayout(mainlayout)
     # }
 
     def populateModel(self):

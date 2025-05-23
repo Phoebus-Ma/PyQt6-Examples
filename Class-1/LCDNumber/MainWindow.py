@@ -31,7 +31,7 @@ class MainWindow(QWidget):
         self.setMinimumSize(self.winWidth, self.winHeight)
 
         # Create layout.
-        layout = QVBoxLayout()
+        mainlayout = QVBoxLayout()
 
         # Create QLCDNumber.
         self.lcd = QLCDNumber(self)
@@ -39,8 +39,8 @@ class MainWindow(QWidget):
         self.lcd.setMode(QLCDNumber.Mode.Dec)                    # Set to decimal.
         self.lcd.setSegmentStyle(QLCDNumber.SegmentStyle.Filled) # Set segment style.
 
-        layout.addWidget(self.lcd)
-        self.setLayout(layout)
+        mainlayout.addWidget(self.lcd)
+        self.setLayout(mainlayout)
 
         # Create a timer, Time updated every second.
         self.timer = QTimer(self)
