@@ -1,0 +1,68 @@
+###
+# PyQt6 list widget main window.
+#
+# License - MIT.
+###
+
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import (
+    QWidget,
+    QListWidget,
+    QVBoxLayout,
+    QLabel,
+    QPushButton
+)
+
+
+class MainWindow(QWidget):
+# {
+    def __init__(self):
+    # {
+        super().__init__()
+
+        self.title     = 'ListWidget'
+        self.winWidth  = 320
+        self.winHeight = 240
+
+        self.initUI()
+    # }
+
+    def initUI(self):
+    # {
+        self.setWindowTitle(self.title)
+        self.setMinimumSize(self.winWidth, self.winHeight)
+
+        layout = QVBoxLayout()
+
+        # Create label for show selected item.
+        self.infoLabel = QLabel("Selected Item: None", self)
+        self.infoLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # Create list widget.
+        self.listWidget = QListWidget(self)
+        self.listWidget.addItems(
+            ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+        )
+
+        # Create button for get selected item.
+        self.button = QPushButton("Show Selected Item", self)
+        self.button.clicked.connect(self.showSelectedItem)
+
+        layout.addWidget(self.infoLabel)
+        layout.addWidget(self.listWidget)
+        layout.addWidget(self.button)
+
+        self.setLayout(layout)
+    # }
+
+    def showSelectedItem(self):
+    # {
+        # Get current selected item.
+        selectedItem = self.listWidget.currentItem()
+
+        if selectedItem:
+            self.infoLabel.setText(f"Selected Item: {selectedItem.text()}")
+        else:
+            self.infoLabel.setText("Selected Item: None")
+    # }
+# }
