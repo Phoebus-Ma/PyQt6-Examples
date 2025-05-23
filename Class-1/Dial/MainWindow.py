@@ -5,8 +5,12 @@
 ###
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QWidget, \
-    QVBoxLayout, QLabel, QDial
+from PyQt6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QLabel,
+    QDial
+)
 
 
 class MainWindow(QWidget):

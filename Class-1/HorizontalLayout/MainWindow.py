@@ -4,8 +4,12 @@
 # License - MIT.
 ###
 
-from PyQt6.QtWidgets import QWidget, QHBoxLayout, QLabel
 from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import (
+    QWidget,
+    QHBoxLayout,
+    QLabel
+)
 
 
 '''
@@ -20,6 +24,8 @@ class MainWindow(QWidget):
 
         # Proprities.
         self.title = 'Horizontal Layout'
+        self.winWidth  = 320
+        self.winHeight = 240
 
         # Initilaze.
         self.initUI()
@@ -28,11 +34,8 @@ class MainWindow(QWidget):
     def initUI(self):
     # {
         self.setWindowTitle(self.title)
-        self.createLayout()
-    # }
+        self.setMinimumSize(self.winWidth, self.winHeight)
 
-    def createLayout(self):
-    # {
         colors = [
             'background-color: red',
             'background-color: green',

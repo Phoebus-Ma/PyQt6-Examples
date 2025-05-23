@@ -5,9 +5,13 @@
 ###
 
 from PyQt6.QtCore import QTime
-from PyQt6.QtWidgets import QWidget, \
-    QHBoxLayout, QTimeEdit, QPushButton, QMessageBox
-
+from PyQt6.QtWidgets import (
+    QWidget,
+    QHBoxLayout,
+    QTimeEdit,
+    QPushButton,
+    QMessageBox
+)
 
 class MainWindow(QWidget):
 # {

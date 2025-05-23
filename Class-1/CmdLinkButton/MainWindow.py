@@ -4,9 +4,14 @@
 # License - MIT.
 ###
 
-from PyQt6.QtWidgets import QWidget, \
-    QVBoxLayout, QMessageBox, QCommandLinkButton
+from PyQt6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QMessageBox,
+    QCommandLinkButton
+)
 from PyQt6.QtGui import QIcon
+
 
 class MainWindow(QWidget):
 # {

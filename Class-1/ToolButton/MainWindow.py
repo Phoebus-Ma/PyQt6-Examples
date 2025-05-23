@@ -5,8 +5,13 @@
 ###
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QWidget, \
-    QVBoxLayout, QToolButton, QMenu, QMessageBox
+from PyQt6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QToolButton,
+    QMenu,
+    QMessageBox
+)
 from PyQt6.QtGui import QAction, QIcon
 
 

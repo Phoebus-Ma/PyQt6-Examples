@@ -4,9 +4,14 @@
 # License - MIT.
 ###
 
-from PyQt6.QtWidgets import QWidget,    \
-    QHBoxLayout, QVBoxLayout,           \
-    QPushButton, QSpacerItem, QSizePolicy
+from PyQt6.QtWidgets import (
+    QWidget,
+    QHBoxLayout,
+    QVBoxLayout,
+    QPushButton,
+    QSpacerItem,
+    QSizePolicy
+)
 
 
 class MainWindow(QWidget):

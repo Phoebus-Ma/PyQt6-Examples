@@ -4,9 +4,13 @@
 # License - MIT.
 ###
 
-from PyQt6.QtCore import QDate, QTime, QDateTime
-from PyQt6.QtWidgets import QWidget, \
-    QVBoxLayout, QPushButton, QLabel, QKeySequenceEdit
+from PyQt6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QPushButton,
+    QLabel,
+    QKeySequenceEdit
+)
 
 
 class MainWindow(QWidget):

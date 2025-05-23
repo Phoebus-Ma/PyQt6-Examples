@@ -4,8 +4,12 @@
 # License - MIT.
 ###
 
-from PyQt6.QtWidgets import QWidget, \
-    QVBoxLayout, QTextEdit, QPushButton
+from PyQt6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QTextEdit,
+    QPushButton
+)
 
 
 class MainWindow(QWidget):

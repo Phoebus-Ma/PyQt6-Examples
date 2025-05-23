@@ -4,9 +4,16 @@
 # License - MIT.
 ###
 
-from PyQt6.QtWidgets import QWidget,       \
-    QFormLayout, QHBoxLayout, QVBoxLayout, \
-    QLabel, QLineEdit, QRadioButton, QPushButton
+from PyQt6.QtWidgets import (
+    QWidget,
+    QFormLayout,
+    QHBoxLayout,
+    QVBoxLayout,
+    QLabel,
+    QLineEdit,
+    QRadioButton,
+    QPushButton
+)
 
 
 class MainWindow(QWidget):
