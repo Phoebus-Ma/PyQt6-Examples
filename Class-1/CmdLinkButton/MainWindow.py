@@ -31,30 +31,23 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QVBoxLayout:
-    # {
-        vLayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Open button.
         btnOpen = QCommandLinkButton('Open', 'Click here for open file', self)
         btnOpen.setIcon(QIcon.fromTheme('document-open'))
         btnOpen.clicked.connect(lambda: self.showMessage('open'))
 
-        vLayout.addWidget(btnOpen)
+        mainLayout.addWidget(btnOpen)
 
         # Save button.
         btnSave = QCommandLinkButton('Save', 'click here for save file', self)
         btnSave.setIcon(QIcon.fromTheme('document-save'))
         btnSave.clicked.connect(lambda: self.showMessage('save'))
 
-        vLayout.addWidget(btnSave)
+        mainLayout.addWidget(btnSave)
 
-        return vLayout
+        self.setLayout(mainLayout)
     # }
 
     def showMessage(self, text):

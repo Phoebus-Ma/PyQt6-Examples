@@ -31,37 +31,29 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        self.textEdit = QTextEdit()
-
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QVBoxLayout:
-    # {
-        vlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Text edit.
+        self.textEdit = QTextEdit()
         self.textEdit.setLineWrapMode(QTextEdit.LineWrapMode.WidgetWidth)
 
-        vlayout.addWidget(self.textEdit)
+        mainLayout.addWidget(self.textEdit)
 
         # Open
         btnOpen = QPushButton()
         btnOpen.setText('Open')
         btnOpen.clicked.connect(self.btnOpenClicked)
 
-        vlayout.addWidget(btnOpen)
+        mainLayout.addWidget(btnOpen)
 
         # Save.
         btnSave = QPushButton()
         btnSave.setText('Save')
         btnSave.clicked.connect(self.btnSaveClicked)
 
-        vlayout.addWidget(btnSave)
+        mainLayout.addWidget(btnSave)
 
-        return vlayout
+        self.setLayout(mainLayout)
     # }
 
     def btnOpenClicked(self):

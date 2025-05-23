@@ -34,35 +34,28 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QFormLayout:
-    # {
-        infoLayout = QFormLayout()
+        mainLayout = QFormLayout()
 
         # Control 1.
-        infoLayout.addRow(QLabel('Name'), QLineEdit())
+        mainLayout.addRow(QLabel('Name'), QLineEdit())
 
         # Control 2.
         sexLayout = QHBoxLayout()
 
         sexLayout.addWidget(QRadioButton('Male'))
         sexLayout.addWidget(QRadioButton('Female'))
-        infoLayout.addRow('Sex', sexLayout)
+        mainLayout.addRow('Sex', sexLayout)
 
         # Control 3.
         addrLayout = QVBoxLayout()
 
         addrLayout.addWidget(QLineEdit())
         addrLayout.addWidget(QLineEdit())
-        infoLayout.addRow('Address', addrLayout)
+        mainLayout.addRow('Address', addrLayout)
 
         # Control 4.
-        infoLayout.addRow(QPushButton('Yes'), QPushButton('No'))
+        mainLayout.addRow(QPushButton('Yes'), QPushButton('No'))
 
-        return infoLayout
+        self.setLayout(mainLayout)
     # }
 # }

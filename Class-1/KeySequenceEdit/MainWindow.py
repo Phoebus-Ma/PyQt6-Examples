@@ -20,8 +20,8 @@ class MainWindow(QWidget):
         super().__init__()
 
         self.title     = 'keySquenceEdit'
-        self.winWidth  = 640
-        self.winHeight = 320
+        self.winWidth  = 320
+        self.winHeight = 240
 
         self.initUI()
     # }
@@ -31,36 +31,28 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        self.label = QLabel("Please input ShortKey:")
-        self.keySquenceEdit = QKeySequenceEdit()
-
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QVBoxLayout:
-    # {
-        vLayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Label.
-        vLayout.addWidget(self.label)
+        self.label = QLabel("Please input ShortKey:")
+        mainLayout.addWidget(self.label)
 
         # Key squence edit.
+        self.keySquenceEdit = QKeySequenceEdit()
         self.keySquenceEdit.setClearButtonEnabled(True)
 
-        vLayout.addWidget(self.keySquenceEdit)
+        mainLayout.addWidget(self.keySquenceEdit)
 
         # Get.
         btnGet = QPushButton()
         btnGet.setText('Get ShortKey')
         btnGet.clicked.connect(self.btnGetClicked)
 
-        vLayout.addWidget(btnGet)
+        mainLayout.addWidget(btnGet)
 
         self.keySquenceEdit.keySequenceChanged.connect(self.update_label)
 
-        return vLayout
+        self.setLayout(mainLayout)
     # }
 
     '''Real-time update label'''

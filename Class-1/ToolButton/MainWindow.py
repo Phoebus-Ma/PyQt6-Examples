@@ -33,14 +33,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QVBoxLayout:
-    # {
-        vLayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Create button.
         toolBtn = QToolButton(self)
@@ -68,9 +61,9 @@ class MainWindow(QWidget):
         # Add click callback (When press 'menu' button).
         toolBtn.clicked.connect(lambda: self.showMessage('Button pressed'))
 
-        vLayout.addWidget(toolBtn)
+        mainLayout.addWidget(toolBtn)
 
-        return vLayout
+        self.setLayout(mainLayout)
     # }
 
     def showMessage(self, text):

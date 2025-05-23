@@ -31,34 +31,26 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        self.timeEdit = QTimeEdit()
-
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QHBoxLayout:
-    # {
-        hLayout = QHBoxLayout()
+        mainLayout = QHBoxLayout()
 
         # Time Edit.
+        self.timeEdit = QTimeEdit()
         self.timeEdit.setMinimumTime(QTime(0, 0, 0))
         self.timeEdit.setMaximumTime(QTime(23, 59, 59))
         self.timeEdit.setTime(QTime(2, 11, 1))
         self.timeEdit.setDisplayFormat('HH:mm')
         self.timeEdit.setMinimumWidth(150)
 
-        hLayout.addWidget(self.timeEdit)
+        mainLayout.addWidget(self.timeEdit)
 
         # Get.
         btnGet = QPushButton()
         btnGet.setText('Print')
         btnGet.clicked.connect(self.btnGetClicked)
 
-        hLayout.addWidget(btnGet)
+        mainLayout.addWidget(btnGet)
 
-        return hLayout
+        self.setLayout(mainLayout)
     # }
 
     '''Slot'''

@@ -32,33 +32,25 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        self.dateEdit = QDateEdit()
-
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QHBoxLayout:
-    # {
-        hLayout = QHBoxLayout()
+        mainLayout = QHBoxLayout()
 
         # Time Edit.
+        self.dateEdit = QDateEdit()
         self.dateEdit.setMinimumDate(QDate(2000, 1, 1))
         self.dateEdit.setDate(QDate.currentDate())
         self.dateEdit.setDisplayFormat('yyyy/MM/dd')
         self.dateEdit.setMinimumWidth(150)
 
-        hLayout.addWidget(self.dateEdit)
+        mainLayout.addWidget(self.dateEdit)
 
         # Get.
         btnGet = QPushButton()
         btnGet.setText('Print')
         btnGet.clicked.connect(self.btnGetClicked)
 
-        hLayout.addWidget(btnGet)
+        mainLayout.addWidget(btnGet)
 
-        return hLayout
+        self.setLayout(mainLayout)
     # }
 
     def btnGetClicked(self):

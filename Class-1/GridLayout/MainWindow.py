@@ -32,22 +32,6 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
-
-        # Add Widget.
-        lineEdit = QLineEdit()
-        lineEdit.setReadOnly(True)
-        mainlayout.addWidget(lineEdit)
-
-        # Add Layout.
-        layout = self.createLayout()
-        mainlayout.addLayout(layout)
-
-        self.setLayout(mainlayout)
-    # }
-
-    def createLayout(self) -> QGridLayout:
-    # {
         # index:
         # AC - (0, 0)
         # 9  - (1, 2)
@@ -60,14 +44,22 @@ class MainWindow(QWidget):
             '%',  '0',  '.'
         ]
 
+        mainlayout = QVBoxLayout()
+
+        # Add Widget.
+        lineEdit = QLineEdit()
+        lineEdit.setReadOnly(True)
+        mainlayout.addWidget(lineEdit)
+
         keysLayout  = QGridLayout()
         leftLayout  = QGridLayout()
         rightLayout = QVBoxLayout()
 
         # Left layout.
-        # Snapshot example: QGridLayout.addWidget(QPushButton('6'), 2, 2) .
+        # Snapshot example: QGridLayout.addWidget(QPushButton('6'), 2, 2).
         for i, key in enumerate(keys, start = 0):
-            leftLayout.addWidget(QPushButton(key), (int)((i - (i % 3)) / 3), i % 3)
+            leftLayout.addWidget(
+                QPushButton(key), (int)((i - (i % 3)) / 3), i % 3)
 
         # Right layout.
         rightLayout.addWidget(QPushButton('*'))
@@ -79,6 +71,8 @@ class MainWindow(QWidget):
         keysLayout.addLayout(leftLayout,  0, 0)
         keysLayout.addLayout(rightLayout, 0, 4)
 
-        return keysLayout
+        mainlayout.addLayout(keysLayout)
+
+        self.setLayout(mainlayout)
     # }
 # }

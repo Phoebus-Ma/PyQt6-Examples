@@ -32,67 +32,59 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        self.lineNormal  = QLineEdit()
-        self.lineNoEcho  = QLineEdit()
-        self.linePwd     = QLineEdit()
-        self.linePwdEcho = QLineEdit()
-        self.lineRight   = QLineEdit()
-
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QFormLayout:
-    # {
-        formLayout = QFormLayout()
+        mainLayout = QFormLayout()
 
         # Normal.
+        self.lineNormal = QLineEdit()
         self.lineNormal.setEchoMode(QLineEdit.EchoMode.Normal)
 
         btnName = QPushButton()
         btnName.setText('Name')
         btnName.clicked.connect(lambda: self.btnShowContent('Name'))
 
-        formLayout.addRow(self.lineNormal, btnName)
+        mainLayout.addRow(self.lineNormal, btnName)
 
         # Right.
+        self.lineRight = QLineEdit()
         self.lineRight.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         btnRight = QPushButton()
         btnRight.setText('Right')
         btnRight.clicked.connect(lambda: self.btnShowContent('Right'))
 
-        formLayout.addRow(self.lineRight, btnRight)
+        mainLayout.addRow(self.lineRight, btnRight)
 
         # No echo.
+        self.lineNoEcho = QLineEdit()
         self.lineNoEcho.setEchoMode(QLineEdit.EchoMode.NoEcho)
 
         btnNoEcho = QPushButton()
         btnNoEcho.setText('NoEcho')
         btnNoEcho.clicked.connect(lambda: self.btnShowContent('NoEcho'))
         
-        formLayout.addRow(self.lineNoEcho, btnNoEcho)
+        mainLayout.addRow(self.lineNoEcho, btnNoEcho)
 
         # Password.
+        self.linePwd = QLineEdit()
         self.linePwd.setEchoMode(QLineEdit.EchoMode.Password)
 
         btnPwd = QPushButton()
         btnPwd.setText('Password')
         btnPwd.clicked.connect(lambda: self.btnShowContent('Password'))
         
-        formLayout.addRow(self.linePwd, btnPwd)
+        mainLayout.addRow(self.linePwd, btnPwd)
 
         # Password echo on edit.
+        self.linePwdEcho = QLineEdit()
         self.linePwdEcho.setEchoMode(QLineEdit.EchoMode.PasswordEchoOnEdit)
 
         btnPwdEcho = QPushButton()
         btnPwdEcho.setText('PwdEcho')
         btnPwdEcho.clicked.connect(lambda: self.btnShowContent('PwdEcho'))
         
-        formLayout.addRow(self.linePwdEcho, btnPwdEcho)
+        mainLayout.addRow(self.linePwdEcho, btnPwdEcho)
 
-        return formLayout
+        self.setLayout(mainLayout)
     # }
 
     '''Common slot'''

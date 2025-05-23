@@ -31,24 +31,16 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        self.dial  = QDial()
-        self.label = QLabel('Current value: 0', alignment = Qt.AlignmentFlag.AlignCenter)
-
-        layout = self.createLayout()
-
-        self.setLayout(layout)
-    # }
-
-    def createLayout(self) -> QVBoxLayout:
-    # {
-        vLayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Label.
+        self.label = QLabel('Current value: 0', alignment = Qt.AlignmentFlag.AlignCenter)
         self.label.setStyleSheet('font-size: 24px;')
 
-        vLayout.addWidget(self.label)
+        mainLayout.addWidget(self.label)
 
         # Time Edit.
+        self.dial  = QDial()
         self.dial.setRange(0, 100)
         self.dial.setValue(0)
         self.dial.setNotchesVisible(True)
@@ -56,9 +48,9 @@ class MainWindow(QWidget):
         self.dial.setPageStep(10)
         self.dial.valueChanged.connect(self.updateLabel)
 
-        vLayout.addWidget(self.dial)
+        mainLayout.addWidget(self.dial)
 
-        return vLayout
+        self.setLayout(mainLayout)
     # }
 
     def updateLabel(self, value):
