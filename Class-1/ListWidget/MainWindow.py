@@ -32,7 +32,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QVBoxLayout()
+        mainlayout = QVBoxLayout()
 
         # Create label for show selected item.
         self.infoLabel = QLabel("Selected Item: None", self)
@@ -48,11 +48,11 @@ class MainWindow(QWidget):
         self.button = QPushButton("Show Selected Item", self)
         self.button.clicked.connect(self.showSelectedItem)
 
-        layout.addWidget(self.infoLabel)
-        layout.addWidget(self.listWidget)
-        layout.addWidget(self.button)
+        mainlayout.addWidget(self.infoLabel)
+        mainlayout.addWidget(self.listWidget)
+        mainlayout.addWidget(self.button)
 
-        self.setLayout(layout)
+        self.setLayout(mainlayout)
     # }
 
     def showSelectedItem(self):
