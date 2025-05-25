@@ -34,7 +34,10 @@ class MainWindow(QWidget):
 
     def initUI(self):
     # {
-         # Initialize music player.
+        self.setWindowTitle(self.title)
+        self.setMinimumSize(self.winWidth, self.winHeight)
+
+        # Initialize music player.
         self.player = QMediaPlayer()
         self.audioOutput = QAudioOutput()
         self.player.setAudioOutput(self.audioOutput)
@@ -44,20 +47,21 @@ class MainWindow(QWidget):
         self.player.durationChanged.connect(self.updateDuration)
 
         # Create control.
-        self.lblName = QLabel('File: None')
+        self.labelName = QLabel('File: None')
+        self.labelName.setMaximumHeight(20)
 
         self.btnPlay = QPushButton('Play')
         self.btnStop = QPushButton('Stop')
         self.btnOpen = QPushButton('Open')
 
-        self.volumeSlider = QSlider(Qt.Orientation.Horizontal)
-        self.volumeSlider.setRange(0, 100)
-        self.volumeSlider.setValue(50)
-        self.volumeSlider.valueChanged.connect(self.setVolume)
+        self.sliderVolume = QSlider(Qt.Orientation.Horizontal)
+        self.sliderVolume.setRange(0, 100)
+        self.sliderVolume.setValue(50)
+        self.sliderVolume.valueChanged.connect(self.setVolume)
 
-        self.positionSlider = QSlider(Qt.Orientation.Horizontal)
-        self.positionSlider.setMinimum(0)
-        self.positionSlider.sliderMoved.connect(self.setPosition)
+        self.sliderPosition = QSlider(Qt.Orientation.Horizontal)
+        self.sliderPosition.setMinimum(0)
+        self.sliderPosition.sliderMoved.connect(self.setPosition)
 
         # Layout.
         controlLayout = QHBoxLayout()
@@ -66,10 +70,10 @@ class MainWindow(QWidget):
         controlLayout.addWidget(self.btnStop)
 
         mainLayout = QVBoxLayout()
-        mainLayout.addWidget(self.lblName)
+        mainLayout.addWidget(self.labelName)
         mainLayout.addLayout(controlLayout)
-        mainLayout.addWidget(self.positionSlider)
-        mainLayout.addWidget(self.volumeSlider)
+        mainLayout.addWidget(self.sliderPosition)
+        mainLayout.addWidget(self.sliderVolume)
 
         self.setLayout(mainLayout)
 
@@ -84,7 +88,7 @@ class MainWindow(QWidget):
         fileName, _ = QFileDialog.getOpenFileName(self, 'Open audio file', '', 
                                                  'Audio file (*.mp3 *.wav *.ogg)')
         if fileName:
-            self.lblName.setText('File: ' + os.path.basename(fileName))
+            self.labelName.setText('File: ' + os.path.basename(fileName))
             self.player.setSource(QUrl.fromLocalFile(fileName))
             self.btnPlay.setEnabled(True)
             self.btnStop.setEnabled(True)
@@ -114,7 +118,7 @@ class MainWindow(QWidget):
     '''Update progress bar when position changes (millisecondss)'''
     def updatePosition(self, position):
     # {
-        self.positionSlider.setValue(position)
+        self.sliderPosition.setValue(position)
         
         if (position >= self.maxPositon):
             self.btnPlay.setText('Play')
@@ -123,10 +127,10 @@ class MainWindow(QWidget):
     '''Set the progress bar range when the file change (millisecondss)'''
     def updateDuration(self, duration):
     # {
-        self.positionSlider.setRange(0, duration)
+        self.sliderPosition.setRange(0, duration)
 
-        # duration == self.positionSlider.maximum().
-        self.maxPositon = self.positionSlider.maximum()
+        # duration == self.sliderPosition.maximum().
+        self.maxPositon = self.sliderPosition.maximum()
     # }
 
     '''Set playback position when the user drags'''
