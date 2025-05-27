@@ -30,7 +30,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Create a QTableView.
         self.tableView = QTableView()
@@ -45,8 +45,8 @@ class MainWindow(QWidget):
         # TableView setup the model.
         self.tableView.setModel(self.model)
 
-        mainlayout.addWidget(self.tableView)
-        self.setLayout(mainlayout)
+        mainLayout.addWidget(self.tableView)
+        self.setLayout(mainLayout)
     # }
 
     def populateModel(self):

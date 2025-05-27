@@ -35,8 +35,7 @@ class MainWindow(QMainWindow):
 
         # Create main layout.
         centralWidget = QWidget()
-        self.setCentralWidget(centralWidget)
-        layout = QVBoxLayout(centralWidget)
+        mainLayout = QVBoxLayout()
 
         # Creaete ToolBox.
         self.toolbox = QToolBox()
@@ -47,25 +46,29 @@ class MainWindow(QMainWindow):
         self.createPage3()
 
         # Add ToolBox to main layout.
-        layout.addWidget(self.toolbox)
+        mainLayout.addWidget(self.toolbox)
 
         # Connect signal (Triggered when the page is switched).
         self.toolbox.currentChanged.connect(self.pageChanged)
+
+        centralWidget.setLayout(mainLayout)
+        self.setCentralWidget(centralWidget)
     # }
 
     '''Create first tool page'''
     def createPage1(self):
     # {
         page = QWidget()
-        layout = QVBoxLayout(page)
+        pageLayout1 = QVBoxLayout()
 
         # Add widget.
-        layout.addWidget(QLabel('User Login'))
-        layout.addWidget(QLineEdit(placeholderText='User'))
-        layout.addWidget(QLineEdit(placeholderText='Password'))
-        layout.addWidget(QPushButton('Login'))
+        pageLayout1.addWidget(QLabel('User Login'))
+        pageLayout1.addWidget(QLineEdit(placeholderText='User'))
+        pageLayout1.addWidget(QLineEdit(placeholderText='Password'))
+        pageLayout1.addWidget(QPushButton('Login'))
 
         # Add page to ToolBox and set icon, text.
+        page.setLayout(pageLayout1)
         self.toolbox.addItem(page, ' Login Page')
     # }
 
@@ -73,13 +76,14 @@ class MainWindow(QMainWindow):
     def createPage2(self):
     # {
         page = QWidget()
-        layout = QVBoxLayout(page)
+        pageLayout2 = QVBoxLayout()
 
-        layout.addWidget(QLabel('Setting Options'))
-        layout.addWidget(QPushButton('Theme'))
-        layout.addWidget(QPushButton('Notice'))
-        layout.addWidget(QPushButton('Advanced'))
+        pageLayout2.addWidget(QLabel('Setting Options'))
+        pageLayout2.addWidget(QPushButton('Theme'))
+        pageLayout2.addWidget(QPushButton('Notice'))
+        pageLayout2.addWidget(QPushButton('Advanced'))
 
+        page.setLayout(pageLayout2)
         self.toolbox.addItem(page, 'Setting Page')
     # }
 
@@ -87,13 +91,14 @@ class MainWindow(QMainWindow):
     def createPage3(self):
     # {
         page = QWidget()
-        layout = QVBoxLayout(page)
+        pageLayout3 = QVBoxLayout()
 
-        layout.addWidget(QLabel('Help'))
-        layout.addWidget(QLabel('Version: 1.0.0'))
-        layout.addWidget(QPushButton('Docs'))
-        layout.addWidget(QPushButton('Contact'))
+        pageLayout3.addWidget(QLabel('Help'))
+        pageLayout3.addWidget(QLabel('Version: 1.0.0'))
+        pageLayout3.addWidget(QPushButton('Docs'))
+        pageLayout3.addWidget(QPushButton('Contact'))
 
+        page.setLayout(pageLayout3)
         self.toolbox.addItem(page, ' Help Page')
     # }
 

@@ -56,12 +56,12 @@ class MainWindow(QMainWindow):
         self.btnStart.clicked.connect(self.startTask)
 
         # Set layout.
-        layout = QVBoxLayout()
-        layout.addWidget(self.progressBar)
-        layout.addWidget(self.btnStart)
+        mainLayout = QVBoxLayout()
+        mainLayout.addWidget(self.progressBar)
+        mainLayout.addWidget(self.btnStart)
 
         container = QWidget()
-        container.setLayout(layout)
+        container.setLayout(mainLayout)
         self.setCentralWidget(container)
 
         # Initialize progress bar.

@@ -30,11 +30,11 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        layout = QHBoxLayout(self)
+        mainLayout = QHBoxLayout()
 
         # Create value label.
-        self.valueLabel = QLabel("Value: 0", self)
-        layout.addWidget(self.valueLabel)
+        self.labelValue = QLabel("Value: 0", self)
+        mainLayout.addWidget(self.labelValue)
 
         # Create horizontal scroll bar. 
         self.scrollbar = QScrollBar(Qt.Orientation.Horizontal, self)
@@ -42,11 +42,12 @@ class MainWindow(QWidget):
         self.scrollbar.setValue(50)      # default value.
         self.scrollbar.valueChanged.connect(self.updateValue)
 
-        layout.addWidget(self.scrollbar)
+        mainLayout.addWidget(self.scrollbar)
+        self.setLayout(mainLayout)
     # }
 
     def updateValue(self, value):
     # {
-        self.valueLabel.setText(f"Value: {value}")
+        self.labelValue.setText(f"Value: {value}")
     # }
 # }

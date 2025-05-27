@@ -36,23 +36,23 @@ class MainWindow(QMainWindow):
 
         # Main layout.
         mainWidget = QWidget()
-        layout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         self.setCentralWidget(mainWidget)
-        mainWidget.setLayout(layout)
+        mainWidget.setLayout(mainLayout)
 
         # Example 1: basic radio button group.
-        self.createBasicRadioButtons(layout)
+        self.createBasicRadioButtons(mainLayout)
 
         # Example 2: visual group.
-        self.createGroupBox(layout)
+        self.createGroupBox(mainLayout)
 
         # Example 3: dynamic update.
-        self.createDynamicExample(layout)
+        self.createDynamicExample(mainLayout)
 
         # Display result label.
-        self.resultLabel = QLabel('Select: None')
-        layout.addWidget(self.resultLabel)
+        self.labelResult = QLabel('Select: None')
+        mainLayout.addWidget(self.labelResult)
     # }
 
     '''Create basic radio button group (Use QButtonGroup)'''
@@ -138,7 +138,7 @@ class MainWindow(QMainWindow):
     # {
         checkedButton = self.colorGroup.checkedButton()
         if checkedButton:
-            self.resultLabel.setText(f'Color: {checkedButton.text()}')
+            self.labelResult.setText(f'Color: {checkedButton.text()}')
     # }
 
     '''Toggle display of advanced options'''

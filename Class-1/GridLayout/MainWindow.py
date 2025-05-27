@@ -44,12 +44,12 @@ class MainWindow(QWidget):
             '%',  '0',  '.'
         ]
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Add Widget.
         lineEdit = QLineEdit()
         lineEdit.setReadOnly(True)
-        mainlayout.addWidget(lineEdit)
+        mainLayout.addWidget(lineEdit)
 
         keysLayout  = QGridLayout()
         leftLayout  = QGridLayout()
@@ -71,8 +71,8 @@ class MainWindow(QWidget):
         keysLayout.addLayout(leftLayout,  0, 0)
         keysLayout.addLayout(rightLayout, 0, 4)
 
-        mainlayout.addLayout(keysLayout)
+        mainLayout.addLayout(keysLayout)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 # }

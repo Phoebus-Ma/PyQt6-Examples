@@ -49,12 +49,12 @@ class MainWindow(QMainWindow):
         tab = QWidget()
         firstLayout = QVBoxLayout()
 
-        label = QLabel("This is first page.")
-        button = QPushButton("Click Test")
-        button.clicked.connect(lambda: print("Clicked page 1."))
+        labelShow = QLabel("This is first page.")
+        btnClick = QPushButton("Click Test")
+        btnClick.clicked.connect(lambda: print("Clicked page 1."))
 
-        firstLayout.addWidget(label)
-        firstLayout.addWidget(button)
+        firstLayout.addWidget(labelShow)
+        firstLayout.addWidget(btnClick)
         tab.setLayout(firstLayout)
 
         self.tabs.addTab(tab, "Tab1")
@@ -67,13 +67,13 @@ class MainWindow(QMainWindow):
         secondLayout = QVBoxLayout()
 
         # Control.
-        self.input = QLineEdit()
-        button = QPushButton("Show input content")
-        button.clicked.connect(self.showInputContent)
+        self.lineEditInput = QLineEdit()
+        btnInput = QPushButton("Show input content")
+        btnInput.clicked.connect(self.showInputContent)
 
         secondLayout.addWidget(QLabel("input:"))
-        secondLayout.addWidget(self.input)
-        secondLayout.addWidget(button)
+        secondLayout.addWidget(self.lineEditInput)
+        secondLayout.addWidget(btnInput)
         tab.setLayout(secondLayout)
 
         self.tabs.addTab(tab, "Tab2")
@@ -93,8 +93,7 @@ class MainWindow(QMainWindow):
 
     def showInputContent(self):
     # {
-        content = self.input.text()
+        content = self.lineEditInput.text()
         print(f"Input: {content}")
-        self.input.clear()
     # }
 # }

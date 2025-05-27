@@ -32,7 +32,7 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Create a stacked widget.
         self.stackedWidget = QStackedWidget(self)
@@ -67,11 +67,11 @@ class MainWindow(QWidget):
         self.button2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
         self.button3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
 
-        mainlayout.addWidget(self.stackedWidget)
-        mainlayout.addWidget(self.button1)
-        mainlayout.addWidget(self.button2)
-        mainlayout.addWidget(self.button3)
+        mainLayout.addWidget(self.stackedWidget)
+        mainLayout.addWidget(self.button1)
+        mainLayout.addWidget(self.button2)
+        mainLayout.addWidget(self.button3)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 # }

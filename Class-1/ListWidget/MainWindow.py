@@ -32,11 +32,11 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Create label for show selected item.
-        self.infoLabel = QLabel("Selected Item: None", self)
-        self.infoLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelInfo = QLabel("Selected Item: None", self)
+        self.labelInfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create list widget.
         self.listWidget = QListWidget(self)
@@ -45,14 +45,14 @@ class MainWindow(QWidget):
         )
 
         # Create button for get selected item.
-        self.button = QPushButton("Show Selected Item", self)
-        self.button.clicked.connect(self.showSelectedItem)
+        self.btnSelect = QPushButton("Show Selected Item", self)
+        self.btnSelect.clicked.connect(self.showSelectedItem)
 
-        mainlayout.addWidget(self.infoLabel)
-        mainlayout.addWidget(self.listWidget)
-        mainlayout.addWidget(self.button)
+        mainLayout.addWidget(self.labelInfo)
+        mainLayout.addWidget(self.listWidget)
+        mainLayout.addWidget(self.btnSelect)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 
     def showSelectedItem(self):
@@ -61,8 +61,8 @@ class MainWindow(QWidget):
         selectedItem = self.listWidget.currentItem()
 
         if selectedItem:
-            self.infoLabel.setText(f"Selected Item: {selectedItem.text()}")
+            self.labelInfo.setText(f"Selected Item: {selectedItem.text()}")
         else:
-            self.infoLabel.setText("Selected Item: None")
+            self.labelInfo.setText("Selected Item: None")
     # }
 # }

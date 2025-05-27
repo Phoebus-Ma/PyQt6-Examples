@@ -34,30 +34,30 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(self.winWidth, self.winHeight)
 
         # Create layout.
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         btnText = QPushButton("Get Text")
         btnText.clicked.connect(self.getText)
-        mainlayout.addWidget(btnText)
+        mainLayout.addWidget(btnText)
 
         btnInt = QPushButton("Get Integer")
         btnInt.clicked.connect(self.getInt)
-        mainlayout.addWidget(btnInt)
+        mainLayout.addWidget(btnInt)
 
         btnDouble = QPushButton("Get Float")
         btnDouble.clicked.connect(self.getDouble)
-        mainlayout.addWidget(btnDouble)
+        mainLayout.addWidget(btnDouble)
 
         btnItem = QPushButton("Select Item")
         btnItem.clicked.connect(self.getItem)
-        mainlayout.addWidget(btnItem)
+        mainLayout.addWidget(btnItem)
 
         btnMulti = QPushButton("Multi-Line Text")
         btnMulti.clicked.connect(self.getMultiLineText)
-        mainlayout.addWidget(btnMulti)
+        mainLayout.addWidget(btnMulti)
 
         container = QWidget()
-        container.setLayout(mainlayout)
+        container.setLayout(mainLayout)
         self.setCentralWidget(container)
     # }
 

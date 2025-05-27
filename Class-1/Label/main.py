@@ -28,10 +28,10 @@ def createUpdateTimer(label: QLabel):
 
 def createImageLabel() -> QLabel:
 # {
-    imgLabel = QLabel()
-    imgLabel.setPixmap(QPixmap('test.jpg'))
+    labelImage = QLabel()
+    labelImage.setPixmap(QPixmap('test.jpg'))
 
-    return imgLabel
+    return labelImage
 # }
 
 
@@ -39,20 +39,20 @@ def createLinkLabel() -> QLabel:
 # {
     urlLink = '<a href="http://www.bing.com"> Bing </a>'
 
-    linkLabel = QLabel()
-    linkLabel.setText(urlLink)
-    linkLabel.setOpenExternalLinks(True)
+    labelLink = QLabel()
+    labelLink.setText(urlLink)
+    labelLink.setOpenExternalLinks(True)
 
-    return linkLabel
+    return labelLink
 # }
 
 
 def createTextLabel() -> QLabel:
 # {
-    textLabel = QLabel()
-    textLabel.setText('hello world.')
+    labelText = QLabel()
+    labelText.setText('hello world.')
 
-    return textLabel
+    return labelText
 # }
 
 

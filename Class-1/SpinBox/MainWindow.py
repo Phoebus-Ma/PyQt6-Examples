@@ -41,17 +41,17 @@ class MainWindow(QMainWindow):
 
         # Configure SpinBox.
         self.spinbox.setRange(0, 100)           # Set value range.
-        self.spinbox.setValue(50)               # Set default value.
-        self.spinbox.setSingleStep(5)           # Set step.
+        self.spinbox.setValue(25)               # Set default value.
+        self.spinbox.setSingleStep(1)           # Set step.
         self.spinbox.setPrefix("Temperature: ") # Set prefix.
         self.spinbox.setSuffix(" °C")           # Set suffix.
 
         # Create label.
-        self.label = QLabel("Value: 50 °C")
+        self.labelTemp = QLabel("Value: 25 °C")
         
         # Add widget to layout.s
         layout.addWidget(self.spinbox)
-        layout.addWidget(self.label)
+        layout.addWidget(self.labelTemp)
 
         # Connect signal (Triggered when the page is switched).
         self.spinbox.valueChanged.connect(self.updateLabel)
@@ -59,6 +59,6 @@ class MainWindow(QMainWindow):
 
     def updateLabel(self, value):
     # {
-        self.label.setText(f"Value: {value} °C")
+        self.labelTemp.setText(f"Value: {value} °C")
     # }
 # }

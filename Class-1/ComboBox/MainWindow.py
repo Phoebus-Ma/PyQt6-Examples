@@ -34,29 +34,31 @@ class MainWindow(QMainWindow):
 
         # Create main layout.
         centralWidget = QWidget()
-        self.setCentralWidget(centralWidget)
-        layout = QVBoxLayout(centralWidget)
+        mainLayout = QVBoxLayout()
 
         # Create QComboBox.
-        self.combo = QComboBox()
+        self.comboFruits = QComboBox()
 
         # Add options (2 ways).
-        self.combo.addItems(['Apple', 'Banana', 'Orange', 'Pear'])
-        self.combo.addItem('Grape')
+        self.comboFruits.addItems(['Apple', 'Banana', 'Orange', 'Pear'])
+        self.comboFruits.addItem('Grape')
 
         # Create label.
-        self.label = QLabel('Select: ')
+        self.labelSelect = QLabel('Select: ')
 
         # Add widget.
-        layout.addWidget(self.combo)
-        layout.addWidget(self.label)
+        mainLayout.addWidget(self.comboFruits)
+        mainLayout.addWidget(self.labelSelect)
 
         # Select slot.
-        self.combo.currentTextChanged.connect(self.updateLabel)
+        self.comboFruits.currentTextChanged.connect(self.updateLabel)
+
+        centralWidget.setLayout(mainLayout)
+        self.setCentralWidget(centralWidget)
     # }
 
     def updateLabel(self, text):
     # {
-        self.label.setText(f'Select: {text}')
+        self.labelSelect.setText(f'Select: {text}')
     # }
 # }

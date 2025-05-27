@@ -31,29 +31,29 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Creaete label for show selected item.
-        self.info_label = QLabel("Selected Date: None", self)
-        self.info_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelInfo = QLabel("Selected Date: None", self)
+        self.labelInfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create a calendar widget.
-        self.calendar_widget = QCalendarWidget(self)
-        self.calendar_widget.setGridVisible(True)  # Display Grid.
+        self.calendarWidget = QCalendarWidget(self)
+        self.calendarWidget.setGridVisible(True)  # Display Grid.
 
         # Calendar widget slot.
-        self.calendar_widget.clicked.connect(self.on_date_changed)
+        self.calendarWidget.clicked.connect(self.onDateChanged)
 
-        mainlayout.addWidget(self.info_label)
-        mainlayout.addWidget(self.calendar_widget)
+        mainLayout.addWidget(self.labelInfo)
+        mainLayout.addWidget(self.calendarWidget)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 
-    def on_date_changed(self, date):
+    def onDateChanged(self, date):
     # {
         # Update label content when date changes.
-        self.info_label.setText(f"Selected Date: {date.toString(Qt.DateFormat.ISODate)}")
+        self.labelInfo.setText(f"Selected Date: {date.toString(Qt.DateFormat.ISODate)}")
 
         print(f"Selected Date: {date.toString(Qt.DateFormat.ISODate)}")
     # }

@@ -73,8 +73,8 @@ class MainWindow(QMainWindow):
 
         # Status bar.
         self.statusBar = QStatusBar()
-        self.statusLabel = QLabel(sys.platform)
-        self.statusBar.addPermanentWidget(self.statusLabel)
+        self.labelStatus = QLabel(sys.platform)
+        self.statusBar.addPermanentWidget(self.labelStatus)
         self.setStatusBar(self.statusBar)
     # }
 

@@ -41,7 +41,7 @@ class MainWindow(QWidget):
             'background-color: blue'
         ]
 
-        self.vboxLayout = QVBoxLayout(self)
+        self.mainLayout = QVBoxLayout()
 
         for i, color in enumerate(colors, start = 1):
             label = QLabel()
@@ -50,7 +50,9 @@ class MainWindow(QWidget):
             label.setStyleSheet(color)
             label.setFixedSize(100, 30)
 
-            self.vboxLayout.addWidget(label)
-            self.vboxLayout.setAlignment(Qt.AlignmentFlag.AlignHCenter)
+            self.mainLayout.addWidget(label)
+            self.mainLayout.setAlignment(Qt.AlignmentFlag.AlignHCenter)
+        
+        self.setLayout(self.mainLayout)
     # }
 # }

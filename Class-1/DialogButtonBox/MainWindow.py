@@ -32,12 +32,12 @@ class MainWindow(QDialog):
         self.setMinimumSize(self.winWidth, self.winHeight)
 
         # Create layout.
-        mainLayout = QVBoxLayout(self)
+        mainLayout = QVBoxLayout()
 
         # Create label.
-        label = QLabel("This is an example dialog box", self)
-        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        mainLayout.addWidget(label)
+        labelText = QLabel("This is an example dialog box")
+        labelText.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        mainLayout.addWidget(labelText)
 
         # Create DialogButtonBox.
         buttonBox = QDialogButtonBox()
@@ -56,6 +56,7 @@ class MainWindow(QDialog):
             QDialogButtonBox.StandardButton.Save).clicked.connect(self.onSave)
 
         mainLayout.addWidget(buttonBox)
+        self.setLayout(mainLayout)
     # }
 
     def onAccept(self):

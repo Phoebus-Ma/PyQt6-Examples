@@ -33,17 +33,17 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
-        self.infoLabel = QLabel("Selected Item: None", self)
-        self.infoLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelInfo = QLabel("Selected Item: None", self)
+        self.labelInfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.treeView = QTreeView(self)
-        self.model = QStandardItemModel()
-        self.model.setHorizontalHeaderLabels(['Items'])
+        self.itemModel = QStandardItemModel()
+        self.itemModel.setHorizontalHeaderLabels(['Items'])
 
         # Add some data.
-        rootItem = self.model.invisibleRootItem()
+        rootItem = self.itemModel.invisibleRootItem()
 
         # Add first level menu.
         item1 = QStandardItem('Item 1')
@@ -64,16 +64,16 @@ class MainWindow(QWidget):
         item1.appendRow(item1_2)
         item2.appendRow(item2_1)
 
-        self.treeView.setModel(self.model)
+        self.treeView.setModel(self.itemModel)
 
-        self.button = QPushButton("Show Selected Item", self)
-        self.button.clicked.connect(self.showSelectedItem)
+        self.btnShow = QPushButton("Show Selected Item", self)
+        self.btnShow.clicked.connect(self.showSelectedItem)
 
-        mainlayout.addWidget(self.infoLabel)
-        mainlayout.addWidget(self.treeView)
-        mainlayout.addWidget(self.button)
+        mainLayout.addWidget(self.labelInfo)
+        mainLayout.addWidget(self.treeView)
+        mainLayout.addWidget(self.btnShow)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 
     def showSelectedItem(self):
@@ -82,9 +82,9 @@ class MainWindow(QWidget):
         index = self.treeView.currentIndex()
 
         if index.isValid():
-            item = self.model.itemFromIndex(index)
-            self.infoLabel.setText(f"Selected Item: {item.text()}")
+            item = self.itemModel.itemFromIndex(index)
+            self.labelInfo.setText(f"Selected Item: {item.text()}")
         else:
-            self.infoLabel.setText("Selected Item: None")
+            self.labelInfo.setText("Selected Item: None")
     # }
 # }

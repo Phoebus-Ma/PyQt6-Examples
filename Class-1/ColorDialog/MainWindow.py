@@ -32,20 +32,20 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Create label for display color.
-        self.colorLabel = QLabel("Selected Color: None", self)
-        self.colorLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelColor = QLabel("Selected Color: None", self)
+        self.labelColor.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create button for open color dialog.
-        self.colorButton = QPushButton("Choose Color", self)
-        self.colorButton.clicked.connect(self.showColorDialog)
+        self.btnColor = QPushButton("Choose Color", self)
+        self.btnColor.clicked.connect(self.showColorDialog)
 
-        mainlayout.addWidget(self.colorLabel)
-        mainlayout.addWidget(self.colorButton)
+        mainLayout.addWidget(self.labelColor)
+        mainLayout.addWidget(self.btnColor)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 
     def showColorDialog(self):
@@ -58,9 +58,9 @@ class MainWindow(QWidget):
             color = colorDialog.selectedColor()
 
             # Updates the label to display information for the color.
-            self.colorLabel.setText(f"Selected Color: {color.name()}")
+            self.labelColor.setText(f"Selected Color: {color.name()}")
 
             # Set the background color for label.
-            self.colorLabel.setStyleSheet(f"background-color: {color.name()};")
+            self.labelColor.setStyleSheet(f"background-color: {color.name()};")
     # }
 # }

@@ -32,16 +32,16 @@ class MainWindow(QWidget):
         self.setMinimumSize(self.winWidth, self.winHeight)
 
         # Create layout and control.
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
-        self.btn = QPushButton('Select', self)
-        self.btn.clicked.connect(self.showFileDialog)
+        self.btnSelect = QPushButton('Select', self)
+        self.btnSelect.clicked.connect(self.showFileDialog)
 
-        self.label = QLabel('Path: ', self)
+        self.labelPath = QLabel('Path: ', self)
 
-        mainlayout.addWidget(self.btn)
-        mainlayout.addWidget(self.label)
-        self.setLayout(mainlayout)
+        mainLayout.addWidget(self.btnSelect)
+        mainLayout.addWidget(self.labelPath)
+        self.setLayout(mainLayout)
     # }
 
     def showFileDialog(self):
@@ -52,10 +52,10 @@ class MainWindow(QWidget):
             "Select",           # Title.
             "",                 # Base directory (default directory).
             "All Files (*);;Text Files (*.txt)",            # File filter.
-            options=QFileDialog.Option.DontUseNativeDialog  # Optional.
+            options = QFileDialog.Option.DontUseNativeDialog  # Optional.
         )
 
         if filename:
-            self.label.setText(f"File: {filename}")
+            self.labelPath.setText(f"File: {filename}")
     # }
 # }

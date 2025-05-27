@@ -33,10 +33,10 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
-        self.infoLabel = QLabel("Selected Cell: None", self)
-        self.infoLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelInfo = QLabel("Selected Cell: None", self)
+        self.labelInfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create a table widget.
         self.tableWidget = QTableWidget(self)
@@ -51,14 +51,14 @@ class MainWindow(QWidget):
                 item = QTableWidgetItem(f"Item {row+1}-{column+1}")
                 self.tableWidget.setItem(row, column, item)
 
-        self.button = QPushButton("Show Selected Cell", self)
-        self.button.clicked.connect(self.showSelectedCell)
+        self.btnShow = QPushButton("Show Selected Cell", self)
+        self.btnShow.clicked.connect(self.showSelectedCell)
 
-        mainlayout.addWidget(self.infoLabel)
-        mainlayout.addWidget(self.tableWidget)
-        mainlayout.addWidget(self.button)
+        mainLayout.addWidget(self.labelInfo)
+        mainLayout.addWidget(self.tableWidget)
+        mainLayout.addWidget(self.btnShow)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 
     def showSelectedCell(self):
@@ -69,8 +69,8 @@ class MainWindow(QWidget):
         if selectedItems:
             # Get the contents of the first selected cell.
             selectedItem = selectedItems[0]
-            self.infoLabel.setText(f"Selected Cell: {selectedItem.text()}")
+            self.labelInfo.setText(f"Selected Cell: {selectedItem.text()}")
         else:
-            self.infoLabel.setText("Selected Cell: None")
+            self.labelInfo.setText("Selected Cell: None")
     # }
 # }

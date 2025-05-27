@@ -31,11 +31,11 @@ class MainWindow(QWidget):
         self.setWindowTitle(self.title)
         self.setMinimumSize(self.winWidth, self.winHeight)
 
-        mainlayout = QHBoxLayout()
+        mainLayout = QHBoxLayout()
 
         # Create label for show slider value.
-        self.label = QLabel("Value: 0", self)
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelValue = QLabel("Value: 0", self)
+        self.labelValue.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create vertical slider.
         self.scrollBar = QSlider(Qt.Orientation.Vertical, self)
@@ -46,15 +46,15 @@ class MainWindow(QWidget):
         # Slider connect slot.
         self.scrollBar.valueChanged.connect(self.updateLabel)
 
-        mainlayout.addWidget(self.label)
-        mainlayout.addWidget(self.scrollBar)
+        mainLayout.addWidget(self.labelValue)
+        mainLayout.addWidget(self.scrollBar)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
     # }
 
     def updateLabel(self, value):
     # {
         # Update label value.
-        self.label.setText(f"Value: {value}")
+        self.labelValue.setText(f"Value: {value}")
     # }
 # }

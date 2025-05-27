@@ -44,17 +44,19 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(self.winWidth, self.winHeight)
 
         centralWidget = QWidget()
-        self.setCentralWidget(centralWidget)
-        layout = QVBoxLayout(centralWidget)
+        mainLayout = QVBoxLayout()
 
         # Use QVideoWidget for video output.
         self.videoWidget = QVideoWidget()
-        layout.addWidget(self.videoWidget)
+        mainLayout.addWidget(self.videoWidget)
 
         # Photo button.
         self.btnCapture = QPushButton('Photo')
         self.btnCapture.clicked.connect(self.captureImage)
-        layout.addWidget(self.btnCapture)
+        mainLayout.addWidget(self.btnCapture)
+
+        centralWidget.setLayout(mainLayout)
+        self.setCentralWidget(centralWidget)
     # }
 
     def initCamera(self):

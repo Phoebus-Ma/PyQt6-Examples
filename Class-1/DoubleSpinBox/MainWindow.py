@@ -47,14 +47,14 @@ class MainWindow(QMainWindow):
         self.spinbox.valueChanged.connect(self.onValueChanged)  # Connect signal.
 
         # Create label.
-        self.valueLabel = QLabel("Current: $ 0.00 dollar")
+        self.labelValue = QLabel("Current: $ 0.00 dollar")
         
         # Create button.
         btnGet = QPushButton("Get value")
         btnGet.clicked.connect(self.getValue)
 
         mainLayout.addWidget(self.spinbox)
-        mainLayout.addWidget(self.valueLabel)
+        mainLayout.addWidget(self.labelValue)
         mainLayout.addWidget(btnGet)
         mainWidget.setLayout(mainLayout)
         self.setCentralWidget(mainWidget)
@@ -63,7 +63,7 @@ class MainWindow(QMainWindow):
     """Update label when value changes"""
     def onValueChanged(self, value):
     # {
-        self.valueLabel.setText(f"Current value: $ {value:.2f} dollar(s)")
+        self.labelValue.setText(f"Current value: $ {value:.2f} dollar(s)")
         print(f"Value changed: {value:.2f}")
     # }
 

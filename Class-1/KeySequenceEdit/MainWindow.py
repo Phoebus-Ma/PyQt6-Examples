@@ -34,8 +34,8 @@ class MainWindow(QWidget):
         mainLayout = QVBoxLayout()
 
         # Label.
-        self.label = QLabel("Please input ShortKey:")
-        mainLayout.addWidget(self.label)
+        self.labelTip = QLabel("Please input ShortKey:")
+        mainLayout.addWidget(self.labelTip)
 
         # Key squence edit.
         self.keySquenceEdit = QKeySequenceEdit()
@@ -58,7 +58,7 @@ class MainWindow(QWidget):
     '''Real-time update label'''
     def update_label(self, key_sequence):
     # {
-        self.label.setText(f'Current shortcuts key: {key_sequence.toString()}')
+        self.labelTip.setText(f'Current shortcuts key: {key_sequence.toString()}')
     # }
 
     '''Display current key squence'''
@@ -66,6 +66,6 @@ class MainWindow(QWidget):
     # {
         sequence = self.keySquenceEdit.keySequence()
         print(f'Current shortcuts key: {sequence.toString()}')
-        self.label.setText(f'Shortcut keys confirmed: {sequence.toString()}')
+        self.labelTip.setText(f'Shortcut keys confirmed: {sequence.toString()}')
     # }
 # }

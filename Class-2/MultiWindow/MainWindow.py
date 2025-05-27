@@ -36,9 +36,9 @@ class MainWindow(QMainWindow):
         mainLayout = QVBoxLayout()
 
         # Create button.
-        self.button = QPushButton("Go to about window", self)
-        self.button.clicked.connect(self.openChildWindow)
-        mainLayout.addWidget(self.button)
+        self.btnOpen = QPushButton("Go to about window", self)
+        self.btnOpen.clicked.connect(self.openChildWindow)
+        mainLayout.addWidget(self.btnOpen)
 
         container = QWidget()
         container.setLayout(mainLayout)

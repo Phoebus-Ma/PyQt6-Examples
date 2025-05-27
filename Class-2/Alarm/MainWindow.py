@@ -60,14 +60,14 @@ class MainWindow(QWidget):
         self.labelStatus.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create layout.
-        mainlayout = QVBoxLayout()
-        mainlayout.addWidget(self.labelTitle)
-        mainlayout.addWidget(self.timeEdit)
-        mainlayout.addWidget(self.btnSet)
-        mainlayout.addWidget(self.btnStop)
-        mainlayout.addWidget(self.labelStatus)
+        mainLayout = QVBoxLayout()
+        mainLayout.addWidget(self.labelTitle)
+        mainLayout.addWidget(self.timeEdit)
+        mainLayout.addWidget(self.btnSet)
+        mainLayout.addWidget(self.btnStop)
+        mainLayout.addWidget(self.labelStatus)
 
-        self.setLayout(mainlayout)
+        self.setLayout(mainLayout)
 
         # Connect signal.
         self.btnSet.clicked.connect(self.setAlarm)

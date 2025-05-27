@@ -41,16 +41,17 @@ class MainWindow(QWidget):
 
         # Create content control.
         contentWidget = QWidget()
-        contentLayout = QVBoxLayout(contentWidget)
+        contentLayout = QVBoxLayout()
 
         # Add a lot of content.
         for i in range(50):
             contentLayout.addWidget(QLabel(f"Item {i + 1}", self))
 
         # Place content in scroll area.
+        contentWidget.setLayout(contentLayout)
         scrollArea.setWidget(contentWidget)
 
-        mainLayout = QVBoxLayout(self)
+        mainLayout = QVBoxLayout()
         mainLayout.addWidget(scrollArea)
         self.setLayout(mainLayout)
     # }

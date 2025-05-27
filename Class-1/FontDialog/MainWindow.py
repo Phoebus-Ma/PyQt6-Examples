@@ -35,15 +35,15 @@ class MainWindow(QWidget):
         layout = QVBoxLayout()
 
         # Create label for display font.
-        self.fontLabel = QLabel("Selected Font: None", self)
-        self.fontLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.labelFont = QLabel("Selected Font: None", self)
+        self.labelFont.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Create button for font dialog.
-        self.fontButton = QPushButton("Choose Font", self)
-        self.fontButton.clicked.connect(self.showFontDialog)
+        self.btnFont = QPushButton("Choose Font", self)
+        self.btnFont.clicked.connect(self.showFontDialog)
 
-        layout.addWidget(self.fontLabel)
-        layout.addWidget(self.fontButton)
+        layout.addWidget(self.labelFont)
+        layout.addWidget(self.btnFont)
 
         self.setLayout(layout)
     # }
@@ -58,9 +58,9 @@ class MainWindow(QWidget):
             font = fontDialog.selectedFont()
 
             # Updates the label to display information for the font.
-            self.fontLabel.setText(f"Selected Font: {font.family()}, Size: {font.pointSize()}")
+            self.labelFont.setText(f"Selected Font: {font.family()}, Size: {font.pointSize()}")
 
             # Set label font to user-selected font.
-            self.fontLabel.setFont(font)
+            self.labelFont.setFont(font)
     # }
 # }

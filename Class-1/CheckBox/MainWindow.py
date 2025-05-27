@@ -49,8 +49,8 @@ class MainWindow(QMainWindow):
         self.createDynamicSection(layout)
 
         # Create result label.
-        self.resultLabel = QLabel('Select: ')
-        layout.addWidget(self.resultLabel)
+        self.labelResult = QLabel('Select: ')
+        layout.addWidget(self.labelResult)
 
         # Add reset button.
         btnReset = QPushButton('reset all selections')
@@ -195,7 +195,7 @@ class MainWindow(QMainWindow):
         if self.advancedOption2.isChecked():
             selected.append('Advanced item 2')
 
-        self.resultLabel.setText('Select: ' + ' | '.join(selected) if selected else 'Select: None')
+        self.labelResult.setText('Select: ' + ' | '.join(selected) if selected else 'Select: None')
     # }
 
     '''Processing tri-state checkbox'''
@@ -238,6 +238,6 @@ class MainWindow(QMainWindow):
         self.advancedOption1.setChecked(False)
         self.advancedOption2.setChecked(False)
 
-        self.resultLabel.setText('Select: Reset')
+        self.labelResult.setText('Select: Reset')
     # }
 # }

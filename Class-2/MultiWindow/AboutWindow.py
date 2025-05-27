@@ -35,12 +35,12 @@ class AboutWindow(QMainWindow):
         # Create layout.
         aboutLayout = QVBoxLayout()
 
-        self.label = QLabel('This is about window.')
-        aboutLayout.addWidget(self.label)
+        self.labelText = QLabel('This is about window.')
+        aboutLayout.addWidget(self.labelText)
 
-        self.button = QPushButton("Return main window", self)
-        self.button.clicked.connect(self.returnToMain)
-        aboutLayout.addWidget(self.button)
+        self.btnReturn = QPushButton("Return main window", self)
+        self.btnReturn.clicked.connect(self.returnToMain)
+        aboutLayout.addWidget(self.btnReturn)
 
         container = QWidget()
         container.setLayout(aboutLayout)

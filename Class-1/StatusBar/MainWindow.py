@@ -35,22 +35,22 @@ class MainWindow(QMainWindow):
         self.setFixedSize(self.winWidth, self.winHeight)
 
         mainWidget = QWidget()
-        layout = QVBoxLayout()
+        mainLayout = QVBoxLayout()
 
         # Create status bar（auto add to bottom).
         self.statusBar = QStatusBar()
-        self.statusLabel = QLabel('Ready')
-        self.statusBar.addPermanentWidget(self.statusLabel)
+        self.labelStatus = QLabel('Ready')
+        self.statusBar.addPermanentWidget(self.labelStatus)
 
         self.setStatusBar(self.statusBar)
 
         # Create button.
-        btn = QPushButton('Update', self)
-        btn.clicked.connect(self.updateStatus)
+        btnUpdate = QPushButton('Update', self)
+        btnUpdate.clicked.connect(self.updateStatus)
 
-        layout.addWidget(btn, alignment=Qt.AlignmentFlag.AlignCenter)
+        mainLayout.addWidget(btnUpdate, alignment=Qt.AlignmentFlag.AlignCenter)
 
-        mainWidget.setLayout(layout)
+        mainWidget.setLayout(mainLayout)
         self.setCentralWidget(mainWidget)
 
         # Initilize display information.
@@ -62,7 +62,7 @@ class MainWindow(QMainWindow):
     # {
         self.statusBar.showMessage('Status: ' + self.getCurrentTime())
 
-        self.statusLabel.setText('Last: ' + self.getCurrentTime())
+        self.labelStatus.setText('Last: ' + self.getCurrentTime())
     # }
     
     '''Get current time'''

@@ -34,34 +34,34 @@ class MainWindow(QWidget):
         mainLayout = QVBoxLayout()
 
         # Label.
-        self.label = QLabel('Current value: 0', alignment = Qt.AlignmentFlag.AlignCenter)
-        self.label.setStyleSheet('font-size: 24px;')
+        self.labelValue = QLabel('Current value: 0', alignment = Qt.AlignmentFlag.AlignCenter)
+        self.labelValue.setStyleSheet('font-size: 24px;')
 
-        mainLayout.addWidget(self.label)
+        mainLayout.addWidget(self.labelValue)
 
         # Time Edit.
-        self.dial  = QDial()
-        self.dial.setRange(0, 100)
-        self.dial.setValue(0)
-        self.dial.setNotchesVisible(True)
-        self.dial.setWrapping(False)
-        self.dial.setPageStep(10)
-        self.dial.valueChanged.connect(self.updateLabel)
+        self.dialKnob  = QDial()
+        self.dialKnob.setRange(0, 100)
+        self.dialKnob.setValue(0)
+        self.dialKnob.setNotchesVisible(True)
+        self.dialKnob.setWrapping(False)
+        self.dialKnob.setPageStep(10)
+        self.dialKnob.valueChanged.connect(self.updateLabel)
 
-        mainLayout.addWidget(self.dial)
+        mainLayout.addWidget(self.dialKnob)
 
         self.setLayout(mainLayout)
     # }
 
     def updateLabel(self, value):
     # {
-        self.label.setText(f"Current value: {value}")
+        self.labelValue.setText(f"Current value: {value}")
         
         if value < 33:
-            self.label.setStyleSheet("color: blue; font-size: 24px;")
+            self.labelValue.setStyleSheet("color: blue; font-size: 24px;")
         elif value < 66:
-            self.label.setStyleSheet("color: green; font-size: 24px;")
+            self.labelValue.setStyleSheet("color: green; font-size: 24px;")
         else:
-            self.label.setStyleSheet("color: red; font-size: 24px;")
+            self.labelValue.setStyleSheet("color: red; font-size: 24px;")
     # }
 # }
